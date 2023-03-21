@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de presupuesto</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="cargarApp()">
+<!-- Cabecero de la App Presupuesto -->
+<div class="cabecero">
+    <div class="presupuesto">
+        <div class="presupuesto_titulo">
+            Presupuesto Disponible
+        </div>
+        <!-- Apartado Ingresos -->
+        <div class="presupuesto_valor" id="presupuesto"><!-- valor presupuesto disponible --></div>
+        <div class="presupuesto_ingreso limpiarEstilos">
+            <div class="presupuesto_ingreso--texto">Ingresos</div>
+            <div class="derecha">
+                <div class="presupuesto_ingreso--valor" id="ingresos"><!-- Valor Ingresos --></div>
+                <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+            </div>
+        </div>
+        <!-- Apartado Egresos -->
+        <div class="presupuesto_egreso limpiarEstilos">
+            <div class="presupuesto_egreso--texto">Egresos</div>
+            <div class="derecha limpiarEstilos">
+                <div class="presupuesto_egreso--valor" id="egresos"><!-- valor egresos --></div>
+                <div class="presupuesto_egreso--porcentaje" id="porcentaje"><!-- porcentaje --></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Formulario para agregar ingresos o egresos -->
+<form action="" id="forma" onsubmit="return false">
+    <div class="agregar">
+        <div class="agregar_contenedor">
+            <select name="" id="tipo" class="agregar_tipo">
+                <option value="ingreso" selected>Entradas</option>
+                <option value="egreso">Salidas</option>
+            </select>
+            <input type="text" class="agregar_descripcion" placeholder="Agrega Descripcion" id="descripcion">
+            <input type="number" name="" id="valor" class="agregar_valor" placeholder="valor" step="any">
+            <button class="agregar_btn" onclick="agregarDato()">
+                <i class="fa-solid fa-plus"></i>  
+            </button>
+        </div>
+    </div>
+</form>
+
+
+<!-- Contenedor para el listado de Ingresos y Egresos -->
+<div class="contenedor limpiarEstilos">
+
+    <!-- Listado Iingreso -->
+    <div class="ingreso">
+        <h2 class="ingreso_titulo">Ingresos</h2>
+        <div id="lista-ingresos">
+            <!-- Elementos Para Lista de Ingresos Con JS -->
+<!--             <div class="elemento limpiarEstilos">
+                <div class="elemento_descripcion">Salario</div>
+                <div class="derecha limpiarEstilos">
+                    <div class="elemento_valor">+ 2000</div>
+                    <div class="elemento_eliminar">
+                        <button class="elemento_eliminar--btn">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Listado Egreso -->
+    <div class="egreso">
+        <h2 class="egreso_titulo">Egresos</h2>
+        <div id="lista-egresos">
+            <!-- Elementos para la lista de Egresos Con JS -->
+<!--             <div class="elemento limpiarEstilos">
+                <div class="elemento_descripcion">Recibos</div>
+                <div class="derecha limpiarEstilos">
+                    <div class="elemento_valor">- 500</div>
+                    <div class="elemento_porcentaje">20%</div>
+                    <div class="elemento_eliminar">
+                        <button class="elemento_eliminar--btn">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<script src="js/Dato.js"></script>
+<script src="js/Ingreso.js"></script>
+<script src="js/Egreso.js"></script>
+<script src="js/App.js"></script>
+
+<!-- Link Para iconos Fontawesome -->
+<script src="https://kit.fontawesome.com/ec1ae304f2.js" crossorigin="anonymous"></script>
+</body>
+</html>
